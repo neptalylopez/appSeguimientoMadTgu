@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MadTguSeguimientoApp.Views.Persona.PersonaEntry"
+             Title="Nueva persona"
+             Padding="10"
+             BackgroundColor="#23294D">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Atras"
+                     x:Name="AddToolBarItem"
+                     Clicked="AddToolBarItem_Clicked"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView HeightRequest="3000">
+            <StackLayout Padding="15"
+                         VerticalOptions="CenterAndExpand"
+                         BackgroundColor="#fff">
+                <Label Text="DATOS DE PERSONA"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       FontSize="Medium"
+                       TextColor="#000"
+                       Margin="0,0,0,15" />
+                <Entry x:Name="TxtNombre"
+                       Placeholder="Ingrese nombres"
+                       FontAttributes="Bold"
+                       Margin="0,4,0,0"
+                       TextTransform="Uppercase" />
+                <Entry x:Name="TxtApellidos"
+                       Placeholder="Ingrese apellidos"
+                       FontAttributes="Bold"
+                       Margin="0,4,0,0"
+                       TextTransform="Uppercase" />
+                <Entry x:Name="TxtDireccion"
+                       Placeholder="Ingrese Dirección"
+                       FontAttributes="Bold"
+                       Margin="0,4,0,0"
+                       TextTransform="Uppercase" />
+                <Entry x:Name="TxtTelefono"
+                       Placeholder="Ingrese teléfono"
+                       FontAttributes="Bold"
+                       Margin="0,4,0,0"
+                       TextTransform="Uppercase" />
+                <StackLayout>
+                    <Label Text="Sexo"
+                           FontSize="Medium"
+                           FontAttributes="Bold" />
+                    <RadioButton x:Name="MasculinoEntry"
+                                 Content="Masculino"
+                                 Value="MASCULINO"
+                                 IsChecked="False" />
+                    <RadioButton x:Name="FemeninoEntry"
+                                 Content="Femenino"
+                                 Value="FEMENINO"
+                                 IsChecked="False" />
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Estado civil"
+                           FontSize="Medium"
+                           FontAttributes="Bold" />
+                    <RadioButton x:Name="CasadoEntry"
+                                 Content="Casado"
+                                 Value="CASADO"
+                                 IsChecked="False" />
+                    <RadioButton x:Name="SolteroEntry"
+                                 Content="Soltero"
+                                 Value="SOLTERO"
+                                 IsChecked="False" />
+                </StackLayout>
+                <Label Text="Fecha cumpleaños"
+                       FontSize="Medium"
+                       FontAttributes="Bold" />
+                <DatePicker x:Name="FechaNacimiento"
+                            Format="d"
+                            DateSelected="startDate_DateSelected"
+                            FontAttributes="Bold" />
+                <Button Text="Guardar"
+                        x:Name="BtnGuardar"
+                        CornerRadius="15"
+                        Clicked="BtnGuardar_Clicked"
+                        Background="#4740DC"
+                        TextColor="#FFF"
+                        Margin="0,40,0,0" />
+                <Button Text="Cancelar"
+                        x:Name="BtnCancelar"
+                        CornerRadius="15"
+                        Clicked="BtnCancelar_Clicked"
+                        Margin="0,20,0,0"
+                        BackgroundColor="#000"
+                        TextColor="#FFF" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

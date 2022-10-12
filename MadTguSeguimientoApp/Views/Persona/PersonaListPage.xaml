@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MadTguSeguimientoApp.Views.Persona.PersonaListPage"
+             Title="Lista de personas"
+             NavigationPage.HasNavigationBar="true">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+ Nueva"
+                     x:Name="AddToolBarItem"
+                     Clicked="AddToolBarItem_Clicked"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#23294D"
+                     Padding="10">
+            <SearchBar Placeholder="Buscar"
+                       PlaceholderColor="#000"
+                       x:Name="TxtBuscar"
+                       TextChanged="TxtBuscar_TextChanged"
+                       SearchButtonPressed="TxtBuscar_SearchButtonPressed"
+                       BackgroundColor="#f2f2f8"
+                       Margin="0,10,0,10"
+                       TextTransform="Uppercase"></SearchBar>
+            <ScrollView  HeightRequest="3000">
+                <ListView x:Name="PersonaListView"
+                          ItemsSource="{Binding personas}"
+                          HasUnevenRows="True"
+                          ItemTapped="PersonaListView_ItemTapped"
+                          IsRefreshing="True"
+                          IsPullToRefreshEnabled="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <SwipeView>
+                                    <!--<SwipeView.LeftItems>
+                                    <SwipeItems>
+                                        <SwipeItem Text="Editar"
+                                                   BackgroundColor="Red"
+                                                   x:Name="EditarSwipeItem"
+                                                   CommandParameter="{Binding Id}"
+                                                   Invoked="EditarSwipeItem_Invoked"></SwipeItem>
+                                        <SwipeItem Text="Eliminar"
+                                                   BackgroundColor="Red"
+                                                   CommandParameter="{Binding Id}"
+                                                   x:Name="EliminarSwipeItem"
+                                                   Invoked="EliminarMenuItem_Clicked"></SwipeItem>
+                                    </SwipeItems>
+                                </SwipeView.LeftItems>-->
+                                    <StackLayout Orientation="Horizontal"
+                                                 Padding="5">
+                                        <StackLayout HorizontalOptions="StartAndExpand">
+                                            <Label Text="{Binding Nombres}"
+                                                   FontSize="Medium"
+                                                   FontAttributes="Bold"
+                                                   TextColor="#EB953E" />
+                                            <Label Text="{Binding Apellidos}"
+                                                   FontSize="Medium"
+                                                   FontAttributes="Bold"
+                                                   TextColor="#EB953E" />
+                                            <Label Text="{Binding Telefono}"
+                                                   FontAttributes="Bold"
+                                                   TextColor="#29337B" />
+                                            <Line BackgroundColor="#000"></Line>
+                                        </StackLayout>
+                                        <StackLayout VerticalOptions="Center"
+                                                     HorizontalOptions="EndAndExpand">
+                                            <Image Source="edit.png"
+                                                   HeightRequest="25"
+                                                   WidthRequest="25">
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer x:Name="EditTap"
+                                                                          Tapped="EditTap_Tapped"
+                                                                          CommandParameter="{Binding Id}" />
+                                                </Image.GestureRecognizers>
+                                            </Image>
+                                            <Image Source="delete.png"
+                                                   HeightRequest="25"
+                                                   WidthRequest="25">
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer x:Name="DeleteTapp"
+                                                                          Tapped="DeleteTapp_Tapped"
+                                                                          CommandParameter="{Binding Id}" />
+                                                </Image.GestureRecognizers>
+                                            </Image>
+                                            <Image Source="lupa.png"
+                                                   HeightRequest="30"
+                                                   WidthRequest="30">
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer x:Name="VerTapp"
+                                                                          Tapped="VerTapp_Tapped"
+                                                                          CommandParameter="{Binding Id}" />
+                                                </Image.GestureRecognizers>
+                                            </Image>
+                                            <Line BackgroundColor="#000"></Line>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </SwipeView>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

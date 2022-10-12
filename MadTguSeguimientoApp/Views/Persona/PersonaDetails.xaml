@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MadTguSeguimientoApp.Views.Persona.PersonaDetails"
+             BackgroundColor="#23294D"
+             Padding="10">
+    <ContentPage.Content>
+        <StackLayout Padding="15" VerticalOptions="CenterAndExpand" BackgroundColor="#fff">
+            <Label Text="DATOS DE PERSONA"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   FontSize="Medium"
+                   TextColor="#000"
+                   Margin="0,0,0,15"/>
+             <Entry x:Name="TxtId"
+                   IsVisible="false" />
+            <Label x:Name="LbNombres"
+                   FontSize="Medium"
+                   FontAttributes="Bold"
+                   TextColor="#EB953E"
+                   Margin="0,4,0,0"/>
+            <Label x:Name="LbApellidos"
+                   FontSize="Medium"
+                   FontAttributes="Bold"
+                   TextColor="#EB953E"
+                   Margin="0,4,0,0"/>
+            <Label x:Name="LbDireccion"
+                   FontSize="Medium"
+                   FontAttributes="Bold"
+                   TextColor="#EB953E"
+                   Margin="0,4,0,0"/>
+            <Label x:Name="LbTelefono"
+                   FontSize="Medium"
+                   FontAttributes="Bold"
+                   TextColor="#EB953E"
+                   Margin="0,4,0,0"/>
+            <Label x:Name="LbCumpleaños"
+                   FontSize="Medium"
+                   FontAttributes="Bold"
+                   TextColor="#EB953E"
+                   Margin="0,4,0,0"/>
+            <Label x:Name="LbSexo"
+                   FontSize="Medium"
+                   FontAttributes="Bold"
+                   TextColor="#EB953E"
+                   Margin="0,4,0,0"/>
+            <Label x:Name="LbEstado"
+                   FontSize="Medium"
+                   FontAttributes="Bold"
+                   TextColor="#EB953E"
+                   Margin="0,4,0,0"/>
+            <Button Text="Regresar"
+                    x:Name="BtnCancelar"
+                    CornerRadius="15"
+                    Clicked="BtnCancelar_Clicked"
+                     Margin="0,40,0,0"
+                     BackgroundColor="#000"
+                     TextColor="#FFF"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
